@@ -1,0 +1,288 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: absolute;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+  animation: cursorAnim 0.5s infinite alternate;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.cursor::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border: 8px solid gray;
+  border-radius: 50%;
+  opacity: 0.5;
+  top: -8px;
+  left: -8px;
+  animation: cursorAnim2 0.5s infinite alternate;
+}
+
+@keyframes cursorAnim {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.7);
+  }
+}
+
+@keyframes cursorAnim2 {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.4);
+  }
+}
+
+@keyframes cursorAnim3 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(3);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.expand {
+  animation: cursorAnim3 0.5s forwards;
+  border: 1px solid red;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.medsos {
+  padding: 5px 0;
+  background-color: #ea7f7f;
+}
+
+.medsos ul li {
+  display: inline-block;
+  color: beige;
+  margin-right: 10px;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.logo {
+  float: left;
+  padding: 15px 0;
+}
+
+header ul {
+  float: right;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li a {
+  padding: 25px 20px;
+  display: inline-block;
+}
+
+header ul li a:hover {
+  background-color: #ea7f7f;
+  color: beige;
+}
+
+.active {
+  background-color: #ea7f7f;
+  color: beige;
+}
+
+.banner {
+  height: 70vh;
+  background-image: url("../foto/sid7.png");
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  margin-bottom: 65px;
+}
+
+.banner:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 116, 116, 0.281);
+}
+
+.banner h2 {
+  color: aliceblue;
+  z-index: 1;
+  padding: 20px 25px;
+  border: 3px solid aliceblue;
+  text-align: center;
+}
+
+section {
+  padding: 25px 0;
+}
+
+section h3 {
+  text-align: center;
+  padding: 20px 0;
+  color: #ea7f7f;
+  margin-bottom: 25px;
+}
+
+.about,
+.service {
+  padding-bottom: 100px;
+}
+
+.about-foto {
+  border-radius: 20px;
+}
+
+.about p {
+  color: #666;
+  word-spacing: 2px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.service {
+  background-color: #f9f9f9;
+}
+
+.box {
+  color: #ea7f7f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.box::after {
+  content: "";
+  clear: both;
+}
+.box .col-4 {
+  width: 30%;
+  padding: 25px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+  border: 1px solid;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 70px;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.box .col-4 h4 {
+  margin: 20px 0;
+}
+
+footer {
+  padding: 10px 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+.bg-loader {
+  background-color: #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bg-loader .loader {
+  width: 70px;
+  height: 70px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  border-top-color: lightskyblue;
+  border-right-color: lightskyblue;
+  border-bottom-color: lightskyblue;
+  animation: puterin 0.8s linear infinite;
+}
+
+.label {
+  background-color: lightskyblue;
+  color: #fff;
+}
+
+.kontak {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+@keyframes putar {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+  .container-logo {
+    text-align: center;
+  }
+  .logo {
+    float: none;
+  }
+  header ul {
+    text-align: center;
+    float: none;
+  }
+  .box .col-4 {
+    width: 100%;
+    float: none;
+    margin-bottom: -10px;
+  }
+}
